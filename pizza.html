@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza House | Найсмачніша піца</title>
+    <style>
+        /* Базові стилі */
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        /* Шапка */
+        header {
+            background: #111;
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 { margin: 0; font-size: 28px; }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        /* Головний екран */
+        .hero {
+            height: 60vh;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                              url("https://images.unsplash.com/photo-1513104890138-7c749659a591");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h2 { font-size: clamp(30px, 6vw, 50px); margin: 0; }
+        .hero p { font-size: clamp(18px, 3vw, 24px); }
+
+        /* Акція */
+        .sale {
+            text-align: center;
+            padding: 20px;
+            background: #ffeb3b;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* Меню */
+        .menu {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .menu h2 { font-size: 36px; margin-bottom: 40px; }
+
+        /* СІТКА КАРТОК - Виправлення для ПК */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        .card img {
+            width: 100%;
+            height: 200px; /* Фіксована висота для ПК */
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .card h3 { font-size: 22px; margin: 15px 0 5px; }
+
+        /* Кнопка */
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            background: orange;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover { background: #ff4500; }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+
+        /* Мобільна адаптація */
+        @media (max-width: 600px) {
+            header { flex-direction: column; text-align: center; }
+            nav { margin-top: 10px; }
+            .hero { height: 40vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🍕 Pizza House</h1>
+        <nav>
+            <a href="#home">Головна</a>
+            <a href="#menu">Меню</a>
+            <a href="#contacts">Контакти</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h2>Найсмачніша піца у місті</h2>
+        <p>Швидка доставка за 30 хвилин</p>
+    </section>
+
+    <section class="sale">
+        🔥 Акція дня: 2 піци = Cola у подарунок!
+    </section>
+
+    <section class="menu" id="menu">
+        <h2>Наше меню</h2>
+        <div class="cards">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591" alt="Маргарита">
+                <h3>Маргарита</h3>
+                <p>⭐ 4.9 | 199 грн</p>
+                <a href="tel:+380xxxxxxxxx"><button>Замовити</button></a>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e" alt="Пепероні">
+                <h3>Пепероні</h3>
+                <p>⭐ 4.8 | 249 грн</p>
+                <a href="tel:+380xxxxxxxxx"><button>Замовити</button></a>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65" alt="4 Сири">
+                <h3>4 Сири</h3>
+                <p>⭐ 4.7 | 279 грн</p>
+                <a href="tel:+380xxxxxxxxx"><button>Замовити</button></a>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65" alt="М'ясна">
+                <h3>М'ясна</h3>
+                <p>⭐ 4.9 | 299 грн</p>
+                <a href="tel:+380xxxxxxxxx"><button>Замовити</button></a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contacts">
+        <p>Замовляйте за телефоном: 📞 +380xxxxxxxxx</p>
+        <p>© 2026 Pizza House </p>
+    </footer>
+
+</body>
+</html>

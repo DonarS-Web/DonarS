@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мотосервіс Львів | Професійний ремонт</title>
+    <style>
+        /* Базові налаштування */
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        /* Шапка сайту */
+        header {
+            background: #000;
+            color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 { margin: 0; font-size: clamp(24px, 5vw, 36px); }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        nav a:hover { color: #ff4500; }
+
+        /* Головний екран (Hero) */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url("https://images.unsplash.com/photo-1558981806-ec527fa84c39") center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h2 { font-size: clamp(32px, 8vw, 60px); margin-bottom: 10px; }
+        .hero p { font-size: clamp(18px, 3vw, 28px); margin-bottom: 30px; }
+
+        /* Секція послуг */
+        .services {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .services h2 { font-size: 36px; margin-bottom: 40px; }
+
+        /* СІТКА КАРТОК - Тут виправлення для ПК */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Автоматично 3 в ряд на ПК */
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            text-align: left;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        .card img {
+            width: 100%;
+            height: 220px; /* Фіксована висота, щоб не було на весь екран */
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 { font-size: 24px; margin-bottom: 15px; color: #000; }
+        .card ul { padding-left: 20px; font-size: 17px; }
+
+        /* Кнопки */
+        .btn {
+            padding: 15px 35px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            background: #ff4500;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn:hover { background: #cc3700; transform: scale(1.05); }
+
+        /* Футер */
+        footer {
+            background: #000;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        /* Мобільні налаштування */
+        @media (max-width: 768px) {
+            header { flex-direction: column; }
+            nav { margin-top: 15px; }
+            .hero { height: 50vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Moto Service</h1>
+        <nav>
+            <a href="#home">Головна</a>
+            <a href="#services">Послуги</a>
+            <a href="#contacts">Контакти</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h2>Ремонт мотоциклів у Львові</h2>
+        <p>Швидко • Якісно • Надійно</p>
+        <a href="tel:+380xxxxxxxxx" class="btn">Подзвонити майстру</a>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Наші послуги</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/007/135/688/small/mechanic-check-and-pouring-engine-oil-to-motorcycle-at-garage-motorcycle-maintenance-and-service-and-repair-concept-selective-focus-free-photo.jpg" alt="Заміна масла">
+                <h3>Заміна масла</h3>
+                <ul>
+                    <li>Злив старого масла</li>
+                    <li>Заміна масляного фільтра</li>
+                    <li>Залив нового масла</li>
+                    <li>Перевірка рівня</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <img src="https://media.istockphoto.com/id/833214698/photo/motorcycle-diagnostic.jpg?s=612x612&w=0&k=20&c=M6LuKKCwlS_UfqbHU_tuUWE8tl5nTGl7SB8nEHw4EDc=" alt="Огляд"> 
+                <h3>Повний огляд</h3>
+                <ul>
+                    <li>Діагностика гальм</li>
+                    <li>Змащування ланцюга</li>
+                    <li>Перевірка тиску</li>
+                    <li>Налаштування світла</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <img src="https://static.vecteezy.com/system/resources/previews/006/965/675/non_2x/mechanic-using-a-wrench-and-socket-on-cylinder-head-of-a-motorcycle-maintenance-repair-motorcycle-concept-in-garage-selective-focus-photo.jpg" alt="Ремонт">
+                <h3>Ремонт двигуна</h3>
+                <ul>
+                    <li>Комп'ютерна діагностика</li>
+                    <li>Капітальний ремонт</li>
+                    <li>Заміна деталей</li>
+                    <li>Фінальне тестування</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacts">
+        <p>© 2026 Moto Service | Контакти: +380 xx xxx xx xx</p>
+        <p>Працюємо: Пн-Сб з 9:00 до 19:00</p>
+    </footer>
+
+</body>
+</html>
