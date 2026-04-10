@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Web Developer | Портфоліо</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Базові налаштування */
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: 'Inter', Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        /* Вимикаємо скрол, поки висить заставка */
+        .no-scroll {
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* ЗАСТАВКА (INTRO) */
+        .intro-screen {
+            height: 100vh;
+            width: 100%;
+            background-color: #0f172a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            transition: opacity 0.6s ease;
+        }
+
+        .portfolio-main-link {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            color: #38bdf8;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .intro-screen p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 500px;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+        /* ОСНОВНИЙ КОНТЕНТ */
+        header {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                              url("https://images.unsplash.com/photo-1498050108023-c5249f4df085");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        header h1 { font-size: clamp(32px, 5vw, 50px); margin: 0; text-shadow: 2px 2px 10px black; }
+
+        .portfolio {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        /* СІТКА КАРТОК - ВИПРАВЛЕННЯ ДЛЯ ПК */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover { transform: translateY(-10px); }
+
+        .card img {
+            width: 100%;
+            height: 220px; /* Фіксований розмір на ПК */
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 { font-size: 24px; margin: 10px 0; }
+
+        .card button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 12px;
+            background: #0f172a;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: auto;
+            transition: 0.3s;
+        }
+        .card button:hover { background: #38bdf8; }
+
+        /* КНОПКА ТЕЛЕГРАМ */
+        .tg-button {
+            display: inline-block;
+            background: #0088cc;
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+        .tg-button:hover { background: #00aaff; transform: scale(1.05); }
+
+        .order { text-align: center; padding: 100px 20px; background: #0f172a; color: white; }
+        footer { background: #000; color: white; text-align: center; padding: 30px; }
+        .sale {
+    background: #ffff11;
+    text-align: center;
+    padding: 30px 20px;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-size: 20px;
+}
+}
+
+.sale h2 {
+    margin-bottom: 10px;
+}
+    </style>
+</head>
+<body class="no-scroll">
+
+    <section id="intro" class="intro-screen">
+        <h1 class="portfolio-main-link">💻 Створюю сучасні сайти для вашого бізнесу</h1>
+        <p>Портфоліо • Лендінги • Магазини • Сайти на замовлення</p>
+        <button onclick="unlockSite()" class="tg-button">Подивитися роботи</button>
+    </section>
+
+    <div id="main-site" style="display: none;">
+        <header>
+            <h1>Web Development with DonarS</h1>
+            <p>Landing • Магазини • Сайти для бізнесу</p>
+        </header>
+        <section class="sale">
+    <h2>🔥 Акція для перших 2 клієнтів</h2>
+    <p>Сайт всього за <b>500 грн</b> замість 1000 грн</p>
+    <p>Залишилось: 2 місця</p>
+</section>
+
+        <section class="portfolio">
+            <h2>Мої проекти</h2>
+            <div class="portfolio-grid">
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39" alt="Moto Service">
+                    <h3>🏍️ Moto Service</h3>
+                    <p>Ремонт та обслуговування мотоциклів.</p>
+                    <a href="moto.html" target="_blank"><button>Відкрити сайт</button></a>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591" alt="Pizza House">
+                    <h3>🍕 Pizza House</h3>
+                    <p>Швидке замовлення найсмачнішої піци.</p>
+                    <a href="pizza.html" target="_blank"><button>Відкрити сайт</button></a>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Sneaker Shop">
+                    <h3>👟 Sneaker Shop</h3>
+                    <p>Стильний магазин брендового взуття.</p>
+                    <a href="shop.html" target="_blank"><button>Відкрити сайт</button></a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="order">
+            <h2>Маєте ідею проекту?</h2>
+            <p>Давайте втілимо її в життя разом!</p>
+            <a href="https://t.me/Pomanweb" target="_blank" class="tg-button">Написати у Telegram</a>
+        </section>
+
+        <footer>
+            <p>© 2026 Web Development with DonarS </p>
+        </footer>
+    </div>
+
+    <script>
+    function unlockSite() {
+        const intro = document.getElementById('intro');
+        const mainSite = document.getElementById('main-site');
+        const body = document.body;
+
+        // Плавно ховаємо заставку
+        intro.style.opacity = '0';
+
+        setTimeout(() => {
+            intro.remove(); // Видаляємо її зовсім
+            mainSite.style.display = 'block'; // Включаємо основний сайт
+            body.classList.remove('no-scroll'); // Повертаємо скрол
+            window.scrollTo(0, 0);
+        }, 600);
+    }
+    </script>
+</body>
+</html>
